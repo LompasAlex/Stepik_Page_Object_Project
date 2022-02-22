@@ -16,3 +16,11 @@ class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
     
+    
+class ProductPageLocators():
+    ADD_TO_BASKET = (By.CLASS_NAME, "btn-add-to-basket")
+    CORRECT_NAME = (By.CSS_SELECTOR, ".product_main h1")
+    ADDED_NAME = (By.CSS_SELECTOR, ".alertinner strong")
+    CORRECT_PRICE = (By.CSS_SELECTOR, ".product_main p")
+    ADDED_PRICE = (By.CSS_SELECTOR, "#messages .alert:nth-child(3) .alertinner p strong")
+    
