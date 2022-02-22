@@ -8,6 +8,11 @@ Created on Mon Feb 21 19:33:34 2022
 from selenium.webdriver.common.by import By
 
 
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    
+    
 class MainPageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     
@@ -23,4 +28,4 @@ class ProductPageLocators():
     ADDED_NAME = (By.CSS_SELECTOR, ".alertinner strong")
     CORRECT_PRICE = (By.CSS_SELECTOR, ".product_main p")
     ADDED_PRICE = (By.CSS_SELECTOR, "#messages .alert:nth-child(3) .alertinner p strong")
-    
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alertinner")

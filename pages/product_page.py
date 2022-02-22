@@ -23,13 +23,16 @@ class ProductPage(BasePage):
     def is_book_name_correct(self):
         correct_book_name = self.browser.find_element(*ProductPageLocators.CORRECT_NAME).text
         added_book_name = self.browser.find_element(*ProductPageLocators.ADDED_NAME).text
-        print("Correct name ", correct_book_name)
-        print("Added name ", added_book_name)
         assert correct_book_name == added_book_name, "name of added to basket book does not match with selected"
         
     def is_price_book_correct(self):
         correct_book_price = self.browser.find_element(*ProductPageLocators.CORRECT_PRICE).text
         added_book_price = self.browser.find_element(*ProductPageLocators.ADDED_PRICE).text
-        print("Correct book price", correct_book_price)
-        print("Added book price", added_book_price)
         assert correct_book_price == added_book_price, "price of added to basket book does not match with selected"
+        
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE),"Success message is presented, but should not be"
+        
+    def should_disappear_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE),"Success message does not disappear"
+        
